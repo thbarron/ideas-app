@@ -3,12 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { IdeaController } from './idea/idea.controller';
-import { IdeaService } from './idea/idea.service';
-import { IdeaEntity } from './idea/idea.entity';
+import { IdeaModule } from './idea/idea.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), IdeaEntity],
+  imports: [TypeOrmModule.forRoot(), IdeaModule],
   controllers: [AppController],
   providers: [AppService],
 })
